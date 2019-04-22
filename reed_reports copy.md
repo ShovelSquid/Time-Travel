@@ -1,8 +1,0 @@
-# Reports
-
-## 2019 / 4 / 16
-
-Added .js and .html files to our repo
-Started to copy over code from out succesful jsfiddle for drawing sprites on the page, stretched and rotating
-Our next step is building a tilemap engine which we'll use as the base for our game
-Also installed jquery, still not sure how to make it do the thing yet, but we'll get there
