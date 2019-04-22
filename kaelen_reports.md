@@ -16,3 +16,11 @@ I started watching the tutorial for making the tilemap editor.
 For next class, I'm going to watch more tutorials and add content to the tilemap editor branch.
 
 I need to actually watch the videos
+
+## 190422
+
+I created a basic prototype for movement for the game
+
+I want to try and make javascript animation so that you move fluidly alongside diagonal movement
+
+I've had some difficulties with animation in javascript in the past, so we'll see what happens
