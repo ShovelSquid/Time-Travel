@@ -39,8 +39,8 @@ function KeyPresser(e) {
 
 
 function PlayerMoveLeft() {
-	if (left == 0) {
-		player.style.left = 0 + "px"
+	if (left == -1000) {
+		player.style.left = left + "px"
 	}
 	else {
 		left = left - 50;
@@ -49,8 +49,8 @@ function PlayerMoveLeft() {
 }
 
 function PlayerMoveRight() {
-	if (left == 450) {
-		player.style.left = 450 + "px"
+	if (left == 1000) {
+		player.style.left = left + "px"
 	}
 	else {
 		left += 50;
@@ -59,8 +59,8 @@ function PlayerMoveRight() {
 }
 
 function PlayerMoveUp() {
-	if (top_ == 0) {
-		player.style.top = 0 + "px"
+	if (top_ == -1000) {
+		player.style.top = top_ + "px"
 	}
 	else {
 		top_ = top_ - 50;
@@ -69,8 +69,8 @@ function PlayerMoveUp() {
 }
 
 function PlayerMoveDown() {
-	if (top_ == 450) {
-		player.style.top = 450 + "px"
+	if (top_ == 1000) {
+		player.style.top = top_ + "px"
 	}
 	else {
 		top_ += 50;

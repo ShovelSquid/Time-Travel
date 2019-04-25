@@ -1,13 +1,18 @@
 .map {
 	position: relative;
-	width: 500px;
-	height: 511px;
+	width: 2050px;
+	height: 2050px;
 	border: 5px solid lightblue;
 }
 
 #sprite {
 	width: 50px;
-	position: absolute;
+	height: 50px;
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1000px;
 }
 
 button:focus {
