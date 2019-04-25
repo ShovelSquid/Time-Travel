@@ -16,3 +16,21 @@ I started watching the tutorial for making the tilemap editor.
 For next class, I'm going to watch more tutorials and add content to the tilemap editor branch.
 
 I need to actually watch the videos
+
+## 190422
+
+I created a prototype for movement, able to move with arrow keys or WASD
+
+For next class, I need to work on greater fluid movement and making it better
+
+Animation in JS is difficult
+
+## 190425
+
+I might have accidentally deleted my daily report for last class during the great purging, but I rewrote it
+
+I made the map bigger for movement, now we have 41 x 41 tiles in total.
+
+I've been thinking, for the tiles, about doing an array of arrays. Each value in the array dictates the tile it is, and then based on that value an image is represented on the screen.
+
+I want to get started on working on that
