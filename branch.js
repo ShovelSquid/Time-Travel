@@ -78,6 +78,18 @@ function PlayerMoveDown() {
 	}
 }
 
+var tile_values = {
+	0: {
+		collision == "off"
+		img == "nice_tiles.png"
+	}
+	1: {
+		collision == "on"
+		img == "wall_ig.png"
+	}
+};
+
+
 let m01 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
 let m02 = [1, 0, 0, 0, 0, 0, 0, 0, 0, 1];
 let m03 = [1, 0, 0, 0, 0, 0, 0, 0, 0, 1];
