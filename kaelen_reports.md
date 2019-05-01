@@ -34,3 +34,9 @@ I made the map bigger for movement, now we have 41 x 41 tiles in total.
 I've been thinking, for the tiles, about doing an array of arrays. Each value in the array dictates the tile it is, and then based on that value an image is represented on the screen.
 
 I want to get started on working on that
+
+## 190501
+
+Reed and I spent most of class trying to parse values from many lists into a function, however at the end of class we learnt the truth of mapping in arrays. It is beautiful.
+
+Next class, we are going to get the images on the screen.
