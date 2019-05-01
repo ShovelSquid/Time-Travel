@@ -39,7 +39,7 @@ function KeyPresser(e) {
 
 
 function PlayerMoveLeft() {
-	if (left == -1000) {
+	if (left == -0) {
 		player.style.left = left + "px"
 	}
 	else {
@@ -49,7 +49,7 @@ function PlayerMoveLeft() {
 }
 
 function PlayerMoveRight() {
-	if (left == 1000) {
+	if (left == 450) {
 		player.style.left = left + "px"
 	}
 	else {
@@ -59,7 +59,7 @@ function PlayerMoveRight() {
 }
 
 function PlayerMoveUp() {
-	if (top_ == -1000) {
+	if (top_ == -0) {
 		player.style.top = top_ + "px"
 	}
 	else {
@@ -69,7 +69,7 @@ function PlayerMoveUp() {
 }
 
 function PlayerMoveDown() {
-	if (top_ == 1000) {
+	if (top_ == 450) {
 		player.style.top = top_ + "px"
 	}
 	else {
@@ -77,3 +77,21 @@ function PlayerMoveDown() {
 		player.style.top = top_ + "px"
 	}
 }
+
+let m1  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+let m2  = [1, 0, 0, 0, 0, 0, 0, 0, 0, 1];
+let m3  = [1, 0, 0, 0, 0, 0, 0, 0, 0, 1];
+let m4  = [1, 0, 0, 0, 0, 0, 0, 0, 0, 1];
+let m5  = [1, 0, 0, 0, 0, 0, 0, 0, 0, 1];
+let m6  = [1, 0, 0, 0, 0, 0, 0, 0, 0, 1];
+let m7  = [1, 0, 0, 0, 0, 0, 0, 0, 0, 1];
+let m8  = [1, 0, 0, 0, 0, 0, 0, 0, 0, 1];
+let m9  = [1, 0, 0, 0, 0, 0, 0, 0, 0, 1];
+let m10 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+
+
+function RenderMap() {
+	totalarray = [m1, m2, m3, m4, m5, m6, m7, m8, m9, m10]
+}
+
+

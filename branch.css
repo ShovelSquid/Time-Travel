@@ -1,7 +1,7 @@
 .map {
 	position: relative;
-	width: 2050px;
-	height: 2050px;
+	width: 500px;
+	height: 500px;
 	border: 5px solid lightblue;
 }
 
@@ -10,9 +10,8 @@
 	height: 50px;
 	position: relative;
 	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 1000px;
+	margin-left: 50px;
+	margin-top: 50px;
 }
 
 button:focus {
