@@ -89,9 +89,13 @@ let m08 = [1, 0, 0, 0, 0, 0, 0, 0, 0, 1];
 let m09 = [1, 0, 0, 0, 0, 0, 0, 0, 0, 1];
 let m10 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
 
+function createtile(tiletype, tilepos) {
+	var material = tiletype;
+	var position = tilepos;
 
 function RenderMap() {
-	totalarray = [m01, m02, m03, m04, m05, m06, m07, m08, m09, m10]
+	totalarray = [m01, m02, m03, m04, m05, m06, m07, m08, m09, m10];
+	totalarray.forEach()
 }
 
 
