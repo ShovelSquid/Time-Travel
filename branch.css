@@ -14,6 +14,16 @@
 	margin-top: 50px;
 }
 
+#tiles--0 {
+	width: 50px;
+	height: 50px;
+}
+
+#wall--1 {
+	width: 50px;
+	height: 50px;
+}
+
 button:focus {
 	outline: none !important;
 }
