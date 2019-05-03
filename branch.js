@@ -90,7 +90,7 @@ var tile_values = {
 };
 
 
-var map = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+const map = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
 		   [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
 		   [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
 		   [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
@@ -100,18 +100,21 @@ var map = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
 		   [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
 		   [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
 		   [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]];
-var someTile = map[0][1];
+const someTile = map[y][x];
 
-function createtile(tiletype, tilepos) {
-	var material = tiletype;
-	var position = tilepos;
+function createtile(tileType, rowNum, columnNum) {
+	console.log("value", + tileType, + rowNum, + columnNum)
 }
 
 function RenderMap() {
-	totalarray = [m01, m02, m03, m04, m05, m06, m07, m08, m09, m10];
-	totalarray.forEach()
+	map.forEach((row, rowNum) => {
+		row.forEach((tileType, columnNum) => {
+			createtile
+		});
+	});
 }
 
+RenderMap()
 
 // const map = [[1, 1, 1],
 // 			 [1, 0, 1],
