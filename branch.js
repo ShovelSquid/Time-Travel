@@ -102,13 +102,13 @@ const map = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
 		   [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]];
 
 function createtile(tileType, rowNum, columnNum) {
-	console.log("value", + tileType, + rowNum, + columnNum)
+	console.log("value", tileType, rowNum, columnNum);
 }
 
 function RenderMap() {
 	map.forEach((row, rowNum) => {
 		row.forEach((tileType, columnNum) => {
-			createtile
+			createtile(tileType, rowNum, columnNum)
 		});
 	});
 }
