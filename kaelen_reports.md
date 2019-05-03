@@ -40,3 +40,11 @@ I want to get started on working on that
 Reed and I spent most of class trying to parse values from many lists into a function, however at the end of class we learnt the truth of mapping in arrays. It is beautiful.
 
 Next class, we are going to get the images on the screen.
+
+## 190503
+
+We were able to obtain information on our map stuff
+
+By next class, I need to create 100 divs in the HTML to be able to alter.
+
+Fun times.
