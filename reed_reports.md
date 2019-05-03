@@ -18,3 +18,8 @@ Did some research on Tiled to create our maps and processing.js to make our move
 Spent the class trying to figure out how to access values through two arrays, little did we know we had constructed the arrays wrong
 Now know how to access specific tiles and their corresponding values (material) which is hella helpful
 Added our nice tiles to the main files
+
+## 2019 / 5 / 3
+Hark! we’ve accessed the VALUES
+It was glorious, we finally got 100 iterations of 3 numbers for each 1 or 0 value on our list of lists
+Next step is to get an image and coordinate values for each tile using these numbers
