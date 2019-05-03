@@ -78,16 +78,16 @@ function PlayerMoveDown() {
 	}
 }
 
-var tile_values = {
-	0: {
-		collision == "off"
-		img == "nice_tiles.png"
-	}
-	1: {
-		collision == "on"
-		img == "wall_ig.png"
-	}
-};
+// var tile_values = {
+// 	0: {
+// 		collision = "off"
+// 		// img = "nice_tiles.png"
+// 	}
+// 	1: {
+// 		collision = "on"
+// 		// img = "wall_ig.png"
+// 	}
+// };
 
 
 var map = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -100,7 +100,8 @@ var map = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
 		   [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
 		   [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
 		   [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]];
-var someTile = map[0][1];
+var someTile = map[y][x];
+
 
 function createtile(tiletype, tilepos) {
 	var material = tiletype;
