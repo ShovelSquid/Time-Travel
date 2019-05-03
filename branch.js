@@ -103,12 +103,22 @@ const map = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
 
 function createtile(tileType, rowNum, columnNum) {
 	console.log("value", + tileType, + rowNum, + columnNum)
+	if (tileType == 0) {
+		document 
+		let collision = false
+	}
+	if (tileType == 1) {
+		document
+		let collision = true
+	}
+	document.style.left = rowNum*50 + "px";
+	document.style.top = columnNum*50 + "px";
 }
 
 function RenderMap() {
 	map.forEach((row, rowNum) => {
 		row.forEach((tileType, columnNum) => {
-			createtile
+			createtile()
 		});
 	});
 }
