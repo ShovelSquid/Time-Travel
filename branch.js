@@ -102,7 +102,6 @@ const map = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
 		   [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]];
 
 function createtile(tileType, rowNum, columnNum) {
-<<<<<<< HEAD
 	console.log("value", tileType, rowNum, columnNum)
 	if (tileType == 0) {
 		document 
@@ -114,20 +113,12 @@ function createtile(tileType, rowNum, columnNum) {
 	}
 	document.style.left = rowNum*50 + "px";
 	document.style.top = columnNum*50 + "px";
-=======
-	console.log("value", tileType, rowNum, columnNum);
-	
->>>>>>> 40bebb74516ba15cbc350f9c9d05ac20d2a41c71
 }
 
 function RenderMap() {
 	map.forEach((row, rowNum) => {
 		row.forEach((tileType, columnNum) => {
-<<<<<<< HEAD
 			createtile(tileType, rowNum, columnNum)
-=======
-			createtile(tileType, rowNum, columnNum)
->>>>>>> 40bebb74516ba15cbc350f9c9d05ac20d2a41c71
 		});
 	});
 }
