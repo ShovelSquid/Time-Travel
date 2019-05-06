@@ -101,18 +101,29 @@ const map = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
 		   [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
 		   [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]];
 
+const tiles = [[]];
+
+
 function createtile(tileType, rowNum, columnNum) {
 	console.log("value", tileType, rowNum, columnNum)
+	console.log("tiles:", tiles)
+	tile = document.createElement("div")
+	tiles.push(tile)
 	if (tileType == 0) {
-		document.querySelectorAll("tile").style.backgroundColor = black;
+		// let tile = tiles.push(document.createElement("div"))
+		tile.style.backgroundColor =  "white";
+		//tile = "./nice_tiles.png"
 		let collision = false;
 	}
 	if (tileType == 1) {
-		document.querySelectorAll("tile").style.backgroundColor = white;
+		// let tile = tiles.push(document.createElement("div"))
+		tile.style.backgroundColor = "black";
+		//tile = "./wall_ig.png"
 		let collision = true;
 	}
-	document.querySelectorAll("tile").left = columnNum*50 + "px";
-	document.querySelectorAll("tile").top = rowNum*50 + "px";
+	console.log(tile)
+	tile.style.left = columnNum*50 + "px";
+	tile.style.top = rowNum*50 + "px";
 }
 
 function RenderMap() {
