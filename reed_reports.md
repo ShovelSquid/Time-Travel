@@ -29,3 +29,10 @@ Next step is to get an image and coordinate values for each tile using these num
 We created the 100 divs and then deleted them all because we decided to create them in a new list of lists
 We made a forEach within a forEach that creates a div for each item in our map array, we figured out how to get the different spaces on our map to know what they are (wall or floor)
 We have yet to make any of our images appear within the map, but thats the next step
+
+## 2019 / 5 / 8
+IT DID THE THING
+We finally have a map that places the tiles in the right place
+The tiles are still just black and white, not images
+We have to add collisions now, but we know how to get the values from the tile now and make things appear on the screen correctly
+it works now tho so yea nice
