@@ -23,3 +23,9 @@ Added our nice tiles to the main files
 Hark! we’ve accessed the VALUES
 It was glorious, we finally got 100 iterations of 3 numbers for each 1 or 0 value on our list of lists
 Next step is to get an image and coordinate values for each tile using these numbers
+
+
+## 2019 / 5 / 6
+We created the 100 divs and then deleted them all because we decided to create them in a new list of lists
+We made a forEach within a forEach that creates a div for each item in our map array, we figured out how to get the different spaces on our map to know what they are (wall or floor)
+We have yet to make any of our images appear within the map, but thats the next step
