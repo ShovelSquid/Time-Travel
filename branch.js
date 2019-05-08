@@ -102,12 +102,14 @@ const map = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
 		   [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]];
 
 const tiles = [[]];
-
+const mapdiv = document.querySelector("#map");
 
 function createtile(tileType, rowNum, columnNum) {
 	console.log("value", tileType, rowNum, columnNum)
 	console.log("tiles:", tiles)
 	tile = document.createElement("div")
+	tile.className = "tile"
+	mapdiv.appendChild(tile);
 	tiles.push(tile)
 	if (tileType == 0) {
 		// let tile = tiles.push(document.createElement("div"))
