@@ -48,3 +48,16 @@ We were able to obtain information on our map stuff
 By next class, I need to create 100 divs in the HTML to be able to alter.
 
 Fun times.
+
+## 190508
+
+IT WORKS
+
+Riley!
+IT WORKS
+Now we have a basic map!
+Tiles are now in the right place!
+we still need to add collision and replace the backgrounds with images
+feels good man
+
+
