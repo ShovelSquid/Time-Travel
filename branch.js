@@ -2,6 +2,10 @@ const player = document.getElementById("sprite");
 let left = 0;
 let top_ = 0;
 
+var position = player.getBoundingClientRect();
+var playerPosTop = position.top;
+var playerPosLeft = position.left;
+console.log("Player Position Top:", playerPosTop, " Player Position Left:", playerPosLeft)
 
 
 function KeyPresser(e) {
@@ -90,40 +94,42 @@ function PlayerMoveDown() {
 // };
 
 
-const map = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-		   [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-		   [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-		   [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-		   [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-		   [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-		   [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-		   [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-		   [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-		   [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]];
+const map =[[1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1],
+			[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+			[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+			[1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1],
+			[1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1],
+			[1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1],
+			[1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1],
+			[1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1],
+			[1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1],
+			[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+			[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+			[1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1]];
 
 const tiles = [[]];
 const mapdiv = document.querySelector("#map");
 
 function createtile(tileType, rowNum, columnNum) {
-	console.log("value", tileType, rowNum, columnNum)
-	console.log("tiles:", tiles)
 	tile = document.createElement("div")
 	tile.className = "tile"
 	mapdiv.appendChild(tile);
 	tiles.push(tile)
 	if (tileType == 0) {
-		// let tile = tiles.push(document.createElement("div"))
-		tile.style.backgroundColor =  "white";
+		imeg = document.createElement("img")
+		imeg.className = "tile"
+		imeg.src = "./nice_tiles.png"
+		tile.appendChild(imeg)
 		//tile = "./nice_tiles.png"
 		let collision = false;
 	}
 	if (tileType == 1) {
-		// let tile = tiles.push(document.createElement("div"))
-		tile.style.backgroundColor = "black";
-		//tile = "./wall_ig.png"
+		imeg = document.createElement("img")
+		imeg.className = "tile"
+		imeg.src = "./wall_ig.png"
+		tile.appendChild(imeg)
 		let collision = true;
 	}
-	console.log(tile)
 	tile.style.left = columnNum*50 + "px";
 	tile.style.top = rowNum*50 + "px";
 }
@@ -138,10 +144,7 @@ function RenderMap() {
 
 RenderMap()
 
-// const map = [[1, 1, 1],
-// 			 [1, 0, 1],
-// 			 [1, 1, 1]];
-// const someTile = map[0][1];
+
 
 
 
