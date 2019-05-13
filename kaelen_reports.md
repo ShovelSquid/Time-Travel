@@ -58,4 +58,9 @@ Tiles are now in the right place!
 we still need to add collision and replace the backgrounds with images
 feels good man
 
+## 190513
 
+Last night I added images to the html
+I merged the experimental move branch back into master
+Now we have to figure out how to beat the beast that is collision
+Maybe we can do it, if the position of the player is going to be equal to that of the wall, then it won't let the image move
