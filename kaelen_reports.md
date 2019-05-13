@@ -1,5 +1,3 @@
-# Reports
-
 ## 190412
 
 I created the repo and Reed added me to the JS Fiddle document that we are using. I created a backlog, however it is currently unfinished.
