@@ -36,3 +36,8 @@ We finally have a map that places the tiles in the right place
 The tiles are still just black and white, not images
 We have to add collisions now, but we know how to get the values from the tile now and make things appear on the screen correctly
 it works now tho so yea nice
+
+## 2019 / 5 / 8
+Our lord and saviour Kaelen implemented the images for tiles between last class and now
+We're still working on collision, I think we're gonna do it by creating position globals for the tiles and adding an if to our directional movement functions
+The if would ask if the positions would become the same upon movement and if the answer is yes, it wont let it move
