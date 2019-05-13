@@ -2,9 +2,10 @@ const player = document.getElementById("sprite");
 let left = 0;
 let top_ = 0;
 
-var position = player.getBoundingClientRect();
-var playerPosTop = position.top;
-var playerPosLeft = position.left;
+var playerposition = player.getBoundingClientRect();
+var bodypos = document.body.getBoundingClientRect();
+var playerPosTop = playerposition.top - bodypos.top;
+var playerPosLeft = playerposition.left - bodypos.left;
 console.log("Player Position Top:", playerPosTop, " Player Position Left:", playerPosLeft)
 
 
