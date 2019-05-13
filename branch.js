@@ -120,7 +120,6 @@ function createtile(tileType, rowNum, columnNum) {
 		imeg.className = "tile"
 		imeg.src = "./nice_tiles.png"
 		tile.appendChild(imeg)
-		//tile = "./nice_tiles.png"
 		let collision = false;
 	}
 	if (tileType == 1) {
