@@ -44,43 +44,66 @@ function KeyPresser(e) {
 
 
 function PlayerMoveLeft() {
-	if (left == -0) {
-		player.style.left = left + "px"
-	}
-	else {
+	var playerposition = player.getBoundingClientRect();
+	var playerPosTop = playerposition.top - bodypos.top;
+	var playerPosLeft = playerposition.left - bodypos.left;
+
+	if ((cpos.findIndex((pos) => pos[0] === playerPosTop && pos[1] === playerPosLeft - 50) === -1)) {
 		left = left - 50;
 		player.style.left = left + "px"
 	}
+	else {
+		player.style.left = left + "px"
+	}
+
+	console.log(playerPosTop, playerPosLeft)
 }
 
 function PlayerMoveRight() {
-	if (left == 450) {
-		player.style.left = left + "px"
-	}
-	else {
+	var playerposition = player.getBoundingClientRect();
+	var playerPosTop = playerposition.top - bodypos.top;
+	var playerPosLeft = playerposition.left - bodypos.left;
+
+	if ((cpos.findIndex((pos) => pos[0] === playerPosTop && pos[1] === playerPosLeft + 50) === -1)) {
 		left += 50;
 		player.style.left = left + "px"
 	}
+	else {
+		player.style.left = left + "px"
+	}
+
+	console.log(playerPosTop, playerPosLeft)
 }
 
 function PlayerMoveUp() {
-	if (top_ == -0) {
-		player.style.top = top_ + "px"
-	}
-	else {
+	var playerposition = player.getBoundingClientRect();
+	var playerPosTop = playerposition.top - bodypos.top;
+	var playerPosLeft = playerposition.left - bodypos.left;
+
+	if ((cpos.findIndex((pos) => pos[0] === playerPosTop - 50 && pos[1] === playerPosLeft) === -1)) {
 		top_ = top_ - 50;
 		player.style.top = top_ + "px"
 	}
+	else {
+		player.style.top = top_ + "px"
+	}
+	console.log(playerPosTop, playerPosLeft)
 }
 
 function PlayerMoveDown() {
-	if (top_ == 450) {
-		player.style.top = top_ + "px"
-	}
-	else {
+	var playerposition = player.getBoundingClientRect();
+	var playerPosTop = playerposition.top - bodypos.top;
+	var playerPosLeft = playerposition.left - bodypos.left;
+
+	if ((cpos.findIndex((pos) => pos[0] === playerPosTop + 50 && pos[1] === playerPosLeft) === -1)) {
 		top_ += 50;
 		player.style.top = top_ + "px"
 	}
+	else {
+		player.style.top = top_ + "px"
+	}
+
+	console.log(playerPosTop, playerPosLeft)
 }
 
 const map =[[1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1],
@@ -109,7 +132,7 @@ function createtile(tileType, rowNum, columnNum) {
 
 	tile.style.left = columnNum*50 + "px";
 	tile.style.top = rowNum*50 + "px";
-	
+
 	if (tileType == 0) {
 		imeg = document.createElement("img")
 		imeg.className = "tile"

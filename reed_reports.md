@@ -41,3 +41,8 @@ it works now tho so yea nice
 Our lord and saviour Kaelen implemented the images for tiles between last class and now
 We're still working on collision, I think we're gonna do it by creating position globals for the tiles and adding an if to our directional movement functions
 The if would ask if the positions would become the same upon movement and if the answer is yes, it wont let it move
+
+## 2019 / 5 / 8
+We gottem collision
+We had a rough time finding the right function and getting the walls to be what we're colliding with
+It works now (with riley's help) and we're excited
