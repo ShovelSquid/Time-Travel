@@ -83,18 +83,6 @@ function PlayerMoveDown() {
 	}
 }
 
-// var tile_values = {
-// 	0: {
-// 		collision = "off"
-// 		// img = "nice_tiles.png"
-// 	}
-// 	1: {
-// 		collision = "on"
-// 		// img = "wall_ig.png"
-// 	}
-// };
-
-
 const map =[[1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1],
 			[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
 			[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
@@ -108,7 +96,9 @@ const map =[[1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1],
 			[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
 			[1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1]];
 
-const tiles = [[]];
+const cpos = []
+
+const tiles = [];
 const mapdiv = document.querySelector("#map");
 
 function createtile(tileType, rowNum, columnNum) {
@@ -116,22 +106,28 @@ function createtile(tileType, rowNum, columnNum) {
 	tile.className = "tile"
 	mapdiv.appendChild(tile);
 	tiles.push(tile)
+
+	tile.style.left = columnNum*50 + "px";
+	tile.style.top = rowNum*50 + "px";
+	
 	if (tileType == 0) {
 		imeg = document.createElement("img")
 		imeg.className = "tile"
 		imeg.src = "./nice_tiles.png"
 		tile.appendChild(imeg)
-		let collision = false;
+
 	}
 	if (tileType == 1) {
 		imeg = document.createElement("img")
 		imeg.className = "tile"
 		imeg.src = "./wall_ig.png"
 		tile.appendChild(imeg)
-		let collision = true;
+		var pos = tile.getBoundingClientRect();
+		var postop = pos.top - bodypos.top;
+		var posleft = pos.left - bodypos.left;
+		cpos.push([postop, posleft]);
+		console.log(cpos);
 	}
-	tile.style.left = columnNum*50 + "px";
-	tile.style.top = rowNum*50 + "px";
 }
 
 function RenderMap() {
