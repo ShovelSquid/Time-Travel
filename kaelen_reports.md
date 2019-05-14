@@ -64,3 +64,14 @@ Last night I added images to the html
 I merged the experimental move branch back into master
 Now we have to figure out how to beat the beast that is collision
 Maybe we can do it, if the position of the player is going to be equal to that of the wall, then it won't let the image move
+
+## 190514
+
+We achieved more enlightenment today
+Collision has just been figured out
+There was some weirdness, we could collide with walls but not with floors before
+But now it works!
+I don't know what we're going to start doing for next class.
+Probably we're going to start working on multiple maps, or adding interactability.
+
+Exciting!
