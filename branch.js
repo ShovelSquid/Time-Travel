@@ -53,10 +53,10 @@ function PlayerMoveLeft() {
 		player.style.left = left + "px"
 	}
 	else {
-		player.style.left = left + "px"
+		player.style.left = left + "px";
+		IposCheck(playerposition, playerPosTop, playerPosLeft);
 	}
-	IposCheck(playerposition, playerPosTop, playerPosLeft)
-	console.log(playerPosTop, playerPosLeft)
+	console.log(playerPosTop, playerPosLeft);
 }
 
 function PlayerMoveRight() {
@@ -69,10 +69,10 @@ function PlayerMoveRight() {
 		player.style.left = left + "px"
 	}
 	else {
-		player.style.left = left + "px"
+		player.style.left = left + "px";
+		IposCheck(playerposition, playerPosTop, playerPosLeft);
 	}
-	IposCheck(playerposition, playerPosTop, playerPosLeft)
-	console.log(playerPosTop, playerPosLeft)
+	console.log(playerPosTop, playerPosLeft);
 }
 
 function PlayerMoveUp() {
@@ -85,10 +85,10 @@ function PlayerMoveUp() {
 		player.style.top = top_ + "px"
 	}
 	else {
-		player.style.top = top_ + "px"
+		player.style.top = top_ + "px";
+		IposCheck(playerposition, playerPosTop, playerPosLeft);
 	}
-	IposCheck(playerposition, playerPosTop, playerPosLeft)
-	console.log(playerPosTop, playerPosLeft)
+	console.log(playerPosTop, playerPosLeft);
 }
 
 function PlayerMoveDown() {
@@ -101,10 +101,11 @@ function PlayerMoveDown() {
 		player.style.top = top_ + "px"
 	}
 	else {
-		player.style.top = top_ + "px"
+		player.style.top = top_ + "px";
+		IposCheck(playerposition, playerPosTop, playerPosLeft);
 	}
-	IposCheck(playerposition, playerPosTop, playerPosLeft)
-	console.log(playerPosTop, playerPosLeft)
+
+	console.log(playerPosTop, playerPosLeft);
 }
 
 const map =[[1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1],
@@ -129,8 +130,8 @@ function IposCheck(playerposition, playerPosTop, playerPosLeft){
 		(ipos.findIndex((pos) => pos[0] === playerPosTop - 50 && pos[1] === playerPosLeft) !== -1) ||
 		(ipos.findIndex((pos) => pos[0] === playerPosTop + 50 && pos[1] === playerPosLeft) !== -1)) {
 	console.log("possible interaction");
-	document.querySelector("#message").innerHTML="Possible Interaction DETECTED";
-	//^^ this is gonna be for messages when ur ne;ar interactables
+	document.querySelector('#message').innerHTML="press A to interact";
+	//^^ this is gonna be for messages when ur near interactables
 	}else{
 	document.querySelector("#message").innerHTML="";
 	}
