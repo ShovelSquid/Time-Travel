@@ -37,16 +37,20 @@ The tiles are still just black and white, not images
 We have to add collisions now, but we know how to get the values from the tile now and make things appear on the screen correctly
 it works now tho so yea nice
 
-## 2019 / 5 / 8
+## 2019 / 5 / 9
 Our lord and saviour Kaelen implemented the images for tiles between last class and now
 We're still working on collision, I think we're gonna do it by creating position globals for the tiles and adding an if to our directional movement functions
 The if would ask if the positions would become the same upon movement and if the answer is yes, it wont let it move
 
-## 2019 / 5 / 8
+## 2019 / 5 / last week
 We gottem collision
 We had a rough time finding the right function and getting the walls to be what we're colliding with
 It works now (with riley's help) and we're excited
 
-## 2019 / 5 / 8
+## 2019 / 5 / 16
 Interaction possibility detection implemented, doesn't adjust html text like I want it to but thats fine
 Kaelen and I will figure it out when he returns tomorrow hopefully
+
+## 2019 / 5 / 17
+We got the interaction to work without doing it when we move away from the tile
+made some new tiles and fixed the map system so that we can render any map that we want

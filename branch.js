@@ -108,7 +108,7 @@ function PlayerMoveDown() {
 	console.log(playerPosTop, playerPosLeft);
 }
 
-const map =[[1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1],
+const map1 =[[1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1],
 			[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
 			[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
 			[1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1],
@@ -120,6 +120,18 @@ const map =[[1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1],
 			[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
 			[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
 			[1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1]];
+const map2 =[[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+			[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+			[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
+			[1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1],
+			[1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1],
+			[1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1],
+			[1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1],
+			[1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1],
+			[1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1],
+			[0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1],
+			[1, 2, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1],
+			[1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1]];
 
 const cpos = []
 const ipos = []
@@ -180,7 +192,7 @@ function createtile(tileType, rowNum, columnNum) {
 	}
 }
 
-function RenderMap() {
+function RenderMap(map) {
 	map.forEach((row, rowNum) => {
 		row.forEach((tileType, columnNum) => {
 			createtile(tileType, rowNum, columnNum)
@@ -188,7 +200,7 @@ function RenderMap() {
 	});
 }
 
-RenderMap()
+RenderMap(map2)
 
 
 
