@@ -160,7 +160,7 @@ function createtile(tileType, rowNum, columnNum) {
 	tiles.push(tile)
 
 	tile.style.left = columnNum*50 + "px";
-	tile.style.top = rowNum*50 + "px";
+	tile.style.top = 50 + rowNum*50 + "px";
 
 	if (tileType == 0) {
 		imeg = document.createElement("img")
