@@ -75,3 +75,9 @@ I don't know what we're going to start doing for next class.
 Probably we're going to start working on multiple maps, or adding interactability.
 
 Exciting!
+
+## 190517
+
+We got some interactability going with some new tiles
+I started adding a health bar to the screen
+I'm going to get to work on that styling and how that works
