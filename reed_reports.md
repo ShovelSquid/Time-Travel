@@ -46,3 +46,7 @@ The if would ask if the positions would become the same upon movement and if the
 We gottem collision
 We had a rough time finding the right function and getting the walls to be what we're colliding with
 It works now (with riley's help) and we're excited
+
+## 2019 / 5 / 8
+Interaction possibility detection implemented, doesn't adjust html text like I want it to but thats fine
+Kaelen and I will figure it out when he returns tomorrow hopefully

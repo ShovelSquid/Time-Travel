@@ -55,7 +55,7 @@ function PlayerMoveLeft() {
 	else {
 		player.style.left = left + "px"
 	}
-
+	IposCheck(playerposition, playerPosTop, playerPosLeft)
 	console.log(playerPosTop, playerPosLeft)
 }
 
@@ -71,7 +71,7 @@ function PlayerMoveRight() {
 	else {
 		player.style.left = left + "px"
 	}
-
+	IposCheck(playerposition, playerPosTop, playerPosLeft)
 	console.log(playerPosTop, playerPosLeft)
 }
 
@@ -87,6 +87,7 @@ function PlayerMoveUp() {
 	else {
 		player.style.top = top_ + "px"
 	}
+	IposCheck(playerposition, playerPosTop, playerPosLeft)
 	console.log(playerPosTop, playerPosLeft)
 }
 
@@ -102,12 +103,12 @@ function PlayerMoveDown() {
 	else {
 		player.style.top = top_ + "px"
 	}
-
+	IposCheck(playerposition, playerPosTop, playerPosLeft)
 	console.log(playerPosTop, playerPosLeft)
 }
 
 const map =[[1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1],
-			[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+			[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1],
 			[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
 			[1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1],
 			[1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1],
@@ -120,6 +121,21 @@ const map =[[1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1],
 			[1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1]];
 
 const cpos = []
+const ipos = []
+
+function IposCheck(playerposition, playerPosTop, playerPosLeft){
+	if ((ipos.findIndex((pos) => pos[0] === playerPosTop && pos[1] === playerPosLeft - 50) !== -1) || 
+		(ipos.findIndex((pos) => pos[0] === playerPosTop && pos[1] === playerPosLeft + 50) !== -1) ||
+		(ipos.findIndex((pos) => pos[0] === playerPosTop - 50 && pos[1] === playerPosLeft) !== -1) ||
+		(ipos.findIndex((pos) => pos[0] === playerPosTop + 50 && pos[1] === playerPosLeft) !== -1)) {
+	console.log("possible interaction");
+	document.querySelector("#message").innerHTML="Possible Interaction DETECTED";
+	//^^ this is gonna be for messages when ur ne;ar interactables
+	}else{
+	document.querySelector("#message").innerHTML="";
+	}
+}
+
 
 const tiles = [];
 const mapdiv = document.querySelector("#map");
@@ -149,7 +165,17 @@ function createtile(tileType, rowNum, columnNum) {
 		var postop = pos.top - bodypos.top;
 		var posleft = pos.left - bodypos.left;
 		cpos.push([postop, posleft]);
-		console.log(cpos);
+	}
+	if (tileType == 2) {
+		imeg = document.createElement("img")
+		imeg.className = "tile"
+		imeg.src = "./dispense.png"
+		tile.appendChild(imeg)
+		var pos = tile.getBoundingClientRect();
+		var postop = pos.top - bodypos.top;
+		var posleft = pos.left - bodypos.left;
+		ipos.push([postop, posleft]);
+		cpos.push([postop, posleft]);
 	}
 }
 
