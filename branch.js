@@ -1,11 +1,11 @@
-const player = document.getElementById("sprite");
+let player = null;
 let left = 0;
 let top_ = 0;
 
-var playerposition = player.getBoundingClientRect();
-var bodypos = document.body.getBoundingClientRect();
-var playerPosTop = playerposition.top - bodypos.top;
-var playerPosLeft = playerposition.left - bodypos.left;
+var playerposition = null;
+var bodypos = null;
+var playerPosTop = null;
+var playerPosLeft = null;
 console.log("Player Position Top:", playerPosTop, " Player Position Left:", playerPosLeft)
 
 
@@ -108,30 +108,38 @@ function PlayerMoveDown() {
 	console.log(playerPosTop, playerPosLeft);
 }
 
-const map1 =[[1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1],
-			[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-			[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-			[1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1],
-			[1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1],
-			[1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1],
-			[1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1],
-			[1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1],
-			[1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1],
-			[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-			[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-			[1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1]];
-const map2 =[[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-			[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-			[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
-			[1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1],
-			[1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1],
-			[1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1],
-			[1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1],
-			[1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1],
-			[1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1],
-			[0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1],
-			[1, 2, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1],
-			[1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1]];
+const maps = [
+	[
+		[1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1],
+		[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+		[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+		[1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1],
+		[1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1],
+		[1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1],
+		[1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1],
+		[1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1],
+		[1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1],
+		[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+		[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+		[1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1]
+	],
+	[
+		[1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1],
+		[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
+		[1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1],
+		[1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1],
+		[1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1],
+		[1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1],
+		[1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1],
+		[1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1],
+		[1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1],
+		[1, 2, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1],
+		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+	]
+];
+
+let currentmap = maps[1];
 
 const cpos = []
 const ipos = []
@@ -142,10 +150,8 @@ function IposCheck(playerposition, playerPosTop, playerPosLeft){
 		(ipos.findIndex((pos) => pos[0] === playerPosTop - 50 && pos[1] === playerPosLeft) !== -1) ||
 		(ipos.findIndex((pos) => pos[0] === playerPosTop + 50 && pos[1] === playerPosLeft) !== -1)) {
 	console.log("possible interaction");
-	document.querySelector('#message').innerHTML="press A to interact";
-	//^^ this is gonna be for messages when ur near interactables
 	}else{
-	document.querySelector("#message").innerHTML="";
+	//do nothing
 	}
 }
 
@@ -193,6 +199,17 @@ function createtile(tileType, rowNum, columnNum) {
 }
 
 function RenderMap(map) {
+	mapdiv.innerHTML = "";
+	player = document.createElement("img");
+	player.id = "sprite";
+	player.src = "./IMG_3886.jpg";
+	mapdiv.appendChild(player);
+
+	playerposition = player.getBoundingClientRect();
+	bodypos = document.body.getBoundingClientRect();
+	playerPosTop = playerposition.top - bodypos.top;
+	playerPosLeft = playerposition.left - bodypos.left;
+
 	map.forEach((row, rowNum) => {
 		row.forEach((tileType, columnNum) => {
 			createtile(tileType, rowNum, columnNum)
@@ -200,7 +217,7 @@ function RenderMap(map) {
 	});
 }
 
-RenderMap(map2)
+RenderMap(currentmap)
 
 
 

@@ -54,3 +54,8 @@ Kaelen and I will figure it out when he returns tomorrow hopefully
 ## 2019 / 5 / 17
 We got the interaction to work without doing it when we move away from the tile
 made some new tiles and fixed the map system so that we can render any map that we want
+
+
+## 2019 / 5 / 22
+Not working yet, but I'm working on making the maps switch when you step off of them
+also made an array to put the maps in so they're easier to call
