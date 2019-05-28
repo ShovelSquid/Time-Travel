@@ -59,3 +59,6 @@ made some new tiles and fixed the map system so that we can render any map that 
 ## 2019 / 5 / 22
 Not working yet, but I'm working on making the maps switch when you step off of them
 also made an array to put the maps in so they're easier to call
+
+## 2019 / 5 / 28
+Added point collecting system, gotta make it print to something other than console but interaction is looking pretty smooth. Just more communication between html and java.
