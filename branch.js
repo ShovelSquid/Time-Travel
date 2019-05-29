@@ -65,6 +65,8 @@ function PlayerMoveLeft() {
 		player.style.left = left + "px";
 		IposCheck(playerposition, playerPosTop, playerPosLeft);
 	}
+	Render_NewMap(playerPosTop, playerPosLeft)
+
 	console.log(playerPosTop, playerPosLeft);
 }
 
@@ -82,6 +84,8 @@ function PlayerMoveRight() {
 		player.style.left = left + "px";
 		IposCheck(playerposition, playerPosTop, playerPosLeft);
 	}
+	Render_NewMap(playerPosTop, playerPosLeft)
+
 	console.log(playerPosTop, playerPosLeft);
 }
 
@@ -99,6 +103,8 @@ function PlayerMoveUp() {
 		player.style.top = top_ + "px";
 		IposCheck(playerposition, playerPosTop, playerPosLeft);
 	}
+	Render_NewMap(playerPosTop, playerPosLeft)
+
 	console.log(playerPosTop, playerPosLeft);
 }
 
@@ -116,12 +122,32 @@ function PlayerMoveDown() {
 		player.style.top = top_ + "px";
 		IposCheck(playerposition, playerPosTop, playerPosLeft);
 	}
+	Render_NewMap(playerPosTop, playerPosLeft)
 
 	console.log(playerPosTop, playerPosLeft);
 }
 
 function Render_NewMap(playerPosTop, playerPosLeft) {
-	
+	if (playerPosTop < 50) {
+		now++;
+		currentmap = maps[now];
+		RenderMap(currentmap);
+	}
+	if (playerPosTop > 550) {
+		now++;
+		currentmap = maps[now];
+		RenderMap(currentmap);
+	}
+	if (playerPosLeft > 550) {
+		now++;
+		currentmap = maps[now];
+		RenderMap(currentmap);
+	}
+	if (playerPosLeft < 0) {
+		now++;
+		currentmap = maps[now];
+		RenderMap(currentmap);
+	}
 }
 
 const maps = [
@@ -131,8 +157,8 @@ const maps = [
 		[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
 		[1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1],
 		[1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1],
-		[1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0],
-		[1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0],
+		[1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1],
+		[1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1],
 		[1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1],
 		[1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1],
 		[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
@@ -140,7 +166,7 @@ const maps = [
 		[1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1]
 	],
 	[
-		[1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1],
+		[1, 1, 1, 1, 1, 0, 3, 1, 1, 1, 1, 1],
 		[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
 		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
 		[1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1],
@@ -149,7 +175,7 @@ const maps = [
 		[1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1],
 		[1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1],
 		[1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1],
-		[1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 3, 1],
+		[1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1],
 		[1, 2, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1],
 		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 	],
@@ -160,8 +186,8 @@ const maps = [
 		[1, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 1],
 		[1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1],
 		[1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1],
-		[0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1],
-		[0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1],
+		[1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1],
+		[1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1],
 		[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
 		[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
 		[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
@@ -183,10 +209,11 @@ const maps = [
 	]
 ];
 
-let currentmap = maps[1];
+let now = 0;
+let currentmap = maps[now];
 
-const cpos = []
-const ipos = []
+var cpos = []
+var ipos = []
 
 function IposCheck(playerposition, playerPosTop, playerPosLeft){
 	if ((ipos.findIndex((pos) => pos[0] === playerPosTop && pos[1] === playerPosLeft - 50) !== -1) || 
@@ -209,7 +236,8 @@ function interactionObjects(playerposition, playerPosTop, playerPosLeft){
 	pts++;
 	document.getElementById("points").innerHTML = pts;
 	document.getElementById("swagtext").innerHTML = "";
-	}else{
+	}
+	else{
 	console.log("no interaction")
 	}
 }
@@ -269,6 +297,8 @@ function createtile(tileType, rowNum, columnNum) {
 
 function RenderMap(map) {
 	mapdiv.innerHTML = "";
+	cpos = [];
+	ipos = [];
 	player = document.createElement("img");
 	player.id = "sprite";
 	player.src = "./IMG_3886.jpg";
@@ -284,7 +314,6 @@ function RenderMap(map) {
 			createtile(tileType, rowNum, columnNum)
 		});
 	});
-
 }
 
 RenderMap(currentmap)
