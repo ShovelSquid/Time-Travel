@@ -1,6 +1,7 @@
 let player = null;
 let left = 0;
 let top_ = 0;
+var pts = 0;
 
 var playerposition = null;
 var bodypos = null;
@@ -173,7 +174,9 @@ function interactionObjects(playerposition, playerPosTop, playerPosLeft){
 		(ipos.findIndex((pos) => pos[0] === playerPosTop - 50 && pos[1] === playerPosLeft) !== -1) ||
 		(ipos.findIndex((pos) => pos[0] === playerPosTop + 50 && pos[1] === playerPosLeft) !== -1)) {
 	console.log("interaction complete");
-	document.getElementById("points").innerHTML = "smthn";
+	pts++;
+	document.getElementById("points").innerHTML = pts;
+	document.getElementById("swagtext").innerHTML = "";
 	}else{
 	console.log("no interaction")
 	}
