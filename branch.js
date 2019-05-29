@@ -39,11 +39,19 @@ function KeyPresser(e) {
 		case 83: //s key (down)
 			PlayerMoveDown();
 			break;
+
+		case 69:
+			var playerposition = player.getBoundingClientRect();
+			var playerPosTop = playerposition.top - bodypos.top;
+			var playerPosLeft = playerposition.left - bodypos.left;
+			interactionObjects(playerposition, playerPosTop, playerPosLeft);
+
 	}
 }
 
 
 function PlayerMoveLeft() {
+	document.getElementById("swagtext").innerHTML = "";
 	var playerposition = player.getBoundingClientRect();
 	var playerPosTop = playerposition.top - bodypos.top;
 	var playerPosLeft = playerposition.left - bodypos.left;
@@ -60,6 +68,7 @@ function PlayerMoveLeft() {
 }
 
 function PlayerMoveRight() {
+	document.getElementById("swagtext").innerHTML = "";
 	var playerposition = player.getBoundingClientRect();
 	var playerPosTop = playerposition.top - bodypos.top;
 	var playerPosLeft = playerposition.left - bodypos.left;
@@ -76,6 +85,7 @@ function PlayerMoveRight() {
 }
 
 function PlayerMoveUp() {
+	document.getElementById("swagtext").innerHTML = "";
 	var playerposition = player.getBoundingClientRect();
 	var playerPosTop = playerposition.top - bodypos.top;
 	var playerPosLeft = playerposition.left - bodypos.left;
@@ -92,6 +102,7 @@ function PlayerMoveUp() {
 }
 
 function PlayerMoveDown() {
+	document.getElementById("swagtext").innerHTML = "";
 	var playerposition = player.getBoundingClientRect();
 	var playerPosTop = playerposition.top - bodypos.top;
 	var playerPosLeft = playerposition.left - bodypos.left;
@@ -150,11 +161,23 @@ function IposCheck(playerposition, playerPosTop, playerPosLeft){
 		(ipos.findIndex((pos) => pos[0] === playerPosTop - 50 && pos[1] === playerPosLeft) !== -1) ||
 		(ipos.findIndex((pos) => pos[0] === playerPosTop + 50 && pos[1] === playerPosLeft) !== -1)) {
 	console.log("possible interaction");
+	document.getElementById("swagtext").innerHTML = "Press E to collect point";
 	}else{
 	//do nothing
 	}
 }
 
+function interactionObjects(playerposition, playerPosTop, playerPosLeft){
+	if ((ipos.findIndex((pos) => pos[0] === playerPosTop && pos[1] === playerPosLeft - 50) !== -1) || 
+		(ipos.findIndex((pos) => pos[0] === playerPosTop && pos[1] === playerPosLeft + 50) !== -1) ||
+		(ipos.findIndex((pos) => pos[0] === playerPosTop - 50 && pos[1] === playerPosLeft) !== -1) ||
+		(ipos.findIndex((pos) => pos[0] === playerPosTop + 50 && pos[1] === playerPosLeft) !== -1)) {
+	console.log("interaction complete");
+	document.getElementById("points").innerHTML = "smthn";
+	}else{
+	console.log("no interaction")
+	}
+}
 
 const tiles = [];
 const mapdiv = document.querySelector("#map");

@@ -81,3 +81,10 @@ Exciting!
 We got some interactability going with some new tiles
 I started adding a health bar to the screen
 I'm going to get to work on that styling and how that works
+
+## 190528
+
+Now we can spawn in different locations based on map
+Reed got picking up objects working, but only in console.
+Now we need to use that to create new maps
+
