@@ -122,7 +122,7 @@ function PlayerMoveDown() {
 const maps = [
 	[
 		[1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1],
-		[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+		[1, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
 		[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
 		[1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1],
 		[1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1],
@@ -144,7 +144,7 @@ const maps = [
 		[1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1],
 		[1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1],
 		[1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1],
-		[1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1],
+		[1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 3, 1],
 		[1, 2, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1],
 		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 	]
@@ -219,6 +219,17 @@ function createtile(tileType, rowNum, columnNum) {
 		ipos.push([postop, posleft]);
 		cpos.push([postop, posleft]);
 	}
+	if (tileType == 3) {
+		imeg = document.createElement("img")
+		imeg.className = "tile"
+		imeg.src = "./nice_tiles.png"
+		tile.appendChild(imeg)
+		console.log(tile.style.top)
+		player.style.left = tile.style.left;
+		player.style.top = tile.style.top;
+		left = columnNum*50;
+		top_ = 50 + rowNum*50;
+	}
 }
 
 function RenderMap(map) {
@@ -238,6 +249,7 @@ function RenderMap(map) {
 			createtile(tileType, rowNum, columnNum)
 		});
 	});
+
 }
 
 RenderMap(currentmap)
