@@ -120,6 +120,10 @@ function PlayerMoveDown() {
 	console.log(playerPosTop, playerPosLeft);
 }
 
+function Render_NewMap(playerPosTop, playerPosLeft) {
+	
+}
+
 const maps = [
 	[
 		[1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1],
