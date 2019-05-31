@@ -62,3 +62,7 @@ also made an array to put the maps in so they're easier to call
 
 ## 2019 / 5 / 28
 Added point collecting system, gotta make it print to something other than console but interaction is looking pretty smooth. Just more communication between html and java.
+
+## 2019 / 5 / 29
+Got the point collection working, i wish i could get the tile to run out of stuff at some point, ill do that next time
+we also got movement between multiple maps working sort of
