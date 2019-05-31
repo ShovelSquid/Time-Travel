@@ -65,9 +65,12 @@ function PlayerMoveLeft() {
 		player.style.left = left + "px";
 		IposCheck(playerposition, playerPosTop, playerPosLeft);
 	}
-	Render_NewMap(playerPosTop, playerPosLeft)
-
-	console.log(playerPosTop, playerPosLeft);
+	playerposition = player.getBoundingClientRect();
+	playerPosTop = playerposition.top - bodypos.top;
+	playerPosLeft = playerposition.left - bodypos.left;
+	if (pts < 3) {
+		Render_NewMap(playerPosTop, playerPosLeft)
+	}
 }
 
 function PlayerMoveRight() {
@@ -84,9 +87,12 @@ function PlayerMoveRight() {
 		player.style.left = left + "px";
 		IposCheck(playerposition, playerPosTop, playerPosLeft);
 	}
-	Render_NewMap(playerPosTop, playerPosLeft)
-
-	console.log(playerPosTop, playerPosLeft);
+	playerposition = player.getBoundingClientRect();
+	playerPosTop = playerposition.top - bodypos.top;
+	playerPosLeft = playerposition.left - bodypos.left;
+	if (pts < 3) {
+		Render_NewMap(playerPosTop, playerPosLeft)
+	}
 }
 
 function PlayerMoveUp() {
@@ -103,9 +109,12 @@ function PlayerMoveUp() {
 		player.style.top = top_ + "px";
 		IposCheck(playerposition, playerPosTop, playerPosLeft);
 	}
-	Render_NewMap(playerPosTop, playerPosLeft)
-
-	console.log(playerPosTop, playerPosLeft);
+	playerposition = player.getBoundingClientRect();
+	playerPosTop = playerposition.top - bodypos.top;
+	playerPosLeft = playerposition.left - bodypos.left;
+	if (pts < 3) {
+		Render_NewMap(playerPosTop, playerPosLeft)
+	}
 }
 
 function PlayerMoveDown() {
@@ -122,9 +131,12 @@ function PlayerMoveDown() {
 		player.style.top = top_ + "px";
 		IposCheck(playerposition, playerPosTop, playerPosLeft);
 	}
-	Render_NewMap(playerPosTop, playerPosLeft)
-
-	console.log(playerPosTop, playerPosLeft);
+	playerposition = player.getBoundingClientRect();
+	playerPosTop = playerposition.top - bodypos.top;
+	playerPosLeft = playerposition.left - bodypos.left;
+	if (pts < 3) {
+		Render_NewMap(playerPosTop, playerPosLeft)
+	}
 }
 
 function Render_NewMap(playerPosTop, playerPosLeft) {
@@ -133,12 +145,12 @@ function Render_NewMap(playerPosTop, playerPosLeft) {
 		currentmap = maps[now];
 		RenderMap(currentmap);
 	}
-	if (playerPosTop > 550) {
+	if (playerPosTop > 600) {
 		now++;
 		currentmap = maps[now];
 		RenderMap(currentmap);
 	}
-	if (playerPosLeft > 550) {
+	if (playerPosLeft > 600) {
 		now++;
 		currentmap = maps[now];
 		RenderMap(currentmap);
@@ -173,7 +185,7 @@ const maps = [
 		[1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1],
 		[1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1],
 		[1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1],
-		[1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1],
+		[0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1],
 		[1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1],
 		[1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1],
 		[1, 2, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1],
@@ -188,13 +200,13 @@ const maps = [
 		[1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1],
 		[1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1],
 		[1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1],
-		[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+		[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3],
 		[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
 		[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
 		[1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1]
 	],
 	[
-		[1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1],
+		[1, 1, 1, 1, 1, 0, 3, 1, 1, 1, 1, 1],
 		[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
 		[1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1],
 		[1, 2, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1],
@@ -203,11 +215,21 @@ const maps = [
 		[1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1],
 		[1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1],
 		[1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1],
-		[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1],
+		[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
 		[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
 		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 	]
 ];
+
+const winmap = [
+		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+		[0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0],
+		[0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+		[0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0],
+		[0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0],
+		[0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0],
+		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+]
 
 let now = 0;
 let currentmap = maps[now];
@@ -236,6 +258,7 @@ function interactionObjects(playerposition, playerPosTop, playerPosLeft){
 	pts++;
 	document.getElementById("points").innerHTML = pts;
 	document.getElementById("swagtext").innerHTML = "";
+	DetectWin()
 	}
 	else{
 	console.log("no interaction")
@@ -314,6 +337,12 @@ function RenderMap(map) {
 			createtile(tileType, rowNum, columnNum)
 		});
 	});
+}
+
+function DetectWin() {
+	if (pts === 3) {
+		RenderMap(winmap)
+	}
 }
 
 RenderMap(currentmap)
